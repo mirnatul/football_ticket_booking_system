@@ -113,7 +113,10 @@ select booking_id, user_id, match_id,
   from bookings where payment_status is null;
 
 
-
+-- query 4
+select booking_id, full_name, fixture, total_cost::int from bookings
+  inner join users using(user_id)
+  inner join matches using(match_id);
 
 
 
