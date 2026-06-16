@@ -119,5 +119,10 @@ select booking_id, full_name, fixture, total_cost::int from bookings
   inner join matches using(match_id);
 
 
+-- query 5
+select user_id, full_name, booking_id from users left join bookings using(user_id);
+
+
+
 
 
