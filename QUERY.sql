@@ -130,3 +130,7 @@ select booking_id, match_id, total_cost::int from bookings
     select avg(total_cost) from bookings
   );
 
+
+-- query 7
+select match_id, fixture, base_ticket_price from 
+  matches order by base_ticket_price desc limit 2 offset 1;
