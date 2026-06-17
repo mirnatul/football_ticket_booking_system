@@ -92,19 +92,14 @@ INSERT INTO Bookings (booking_id, user_id, match_id, seat_number, payment_status
 (505, 3, 102, 'C-20', 'Pending', 120.00);
 
 
-
-
-
-
--- ============================== Query 1
+-- query 1
 select match_id, fixture, base_ticket_price::int from matches 
   where tournament_category = 'Champions League' and match_status = 'Available';
 
 
--- ================Query 2
+-- query 2
 select user_id, full_name, email from users 
   where full_name ilike 'Tanvir%' or full_name ilike '%Haque';
-
 
 
 -- query 3
@@ -123,7 +118,6 @@ select booking_id, full_name, fixture, total_cost::int from bookings
 select user_id, full_name, booking_id from users left join bookings using(user_id);
 
 
-
 -- query 6
 select booking_id, match_id, total_cost::int from bookings 
   where total_cost > (
@@ -132,5 +126,5 @@ select booking_id, match_id, total_cost::int from bookings
 
 
 -- query 7
-select match_id, fixture, base_ticket_price from 
+select match_id, fixture, base_ticket_price::int from 
   matches order by base_ticket_price desc limit 2 offset 1;
